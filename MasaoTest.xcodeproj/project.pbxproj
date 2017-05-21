@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1DADBE1B1ECC5F170071D552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE1A1ECC5F170071D552 /* AppDelegate.swift */; };
-		1DADBE1D1ECC5F170071D552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE1C1ECC5F170071D552 /* ViewController.swift */; };
+		1DADBE1D1ECC5F170071D552 /* MTAppointmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE1C1ECC5F170071D552 /* MTAppointmentsListViewController.swift */; };
 		1DADBE201ECC5F170071D552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DADBE1E1ECC5F170071D552 /* Main.storyboard */; };
 		1DADBE221ECC5F170071D552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DADBE211ECC5F170071D552 /* Assets.xcassets */; };
 		1DADBE251ECC5F170071D552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DADBE231ECC5F170071D552 /* LaunchScreen.storyboard */; };
 		1DADBE301ECC5F170071D552 /* MasaoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE2F1ECC5F170071D552 /* MasaoTestTests.swift */; };
 		1DADBE3B1ECC5F170071D552 /* MasaoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE3A1ECC5F170071D552 /* MasaoTestUITests.swift */; };
+		1DADBE491ECC7D880071D552 /* MTAppointmentsListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE481ECC7D880071D552 /* MTAppointmentsListDataProvider.swift */; };
+		1DADBE521ECC868D0071D552 /* MTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE511ECC868D0071D552 /* MTUser.swift */; };
+		1DADBE541ECC8D970071D552 /* MTAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE531ECC8D970071D552 /* MTAppointment.swift */; };
+		1DADBE561ECC8E0F0071D552 /* MTAppointmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE551ECC8E0F0071D552 /* MTAppointmentType.swift */; };
+		1DADBE581ECC934F0071D552 /* MTContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE571ECC934F0071D552 /* MTContentLoader.swift */; };
+		1DADBE5F1ED06ED20071D552 /* MTAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE5E1ED06ED20071D552 /* MTAppointmentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,7 @@
 /* Begin PBXFileReference section */
 		1DADBE171ECC5F170071D552 /* MasaoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasaoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DADBE1A1ECC5F170071D552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1DADBE1C1ECC5F170071D552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DADBE1C1ECC5F170071D552 /* MTAppointmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTAppointmentsListViewController.swift; sourceTree = "<group>"; };
 		1DADBE1F1ECC5F170071D552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DADBE211ECC5F170071D552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DADBE241ECC5F170071D552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +53,12 @@
 		1DADBE361ECC5F170071D552 /* MasaoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasaoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DADBE3A1ECC5F170071D552 /* MasaoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasaoTestUITests.swift; sourceTree = "<group>"; };
 		1DADBE3C1ECC5F170071D552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DADBE481ECC7D880071D552 /* MTAppointmentsListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAppointmentsListDataProvider.swift; sourceTree = "<group>"; };
+		1DADBE511ECC868D0071D552 /* MTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTUser.swift; path = Model/MTUser.swift; sourceTree = "<group>"; };
+		1DADBE531ECC8D970071D552 /* MTAppointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTAppointment.swift; path = Model/MTAppointment.swift; sourceTree = "<group>"; };
+		1DADBE551ECC8E0F0071D552 /* MTAppointmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTAppointmentType.swift; path = Model/MTAppointmentType.swift; sourceTree = "<group>"; };
+		1DADBE571ECC934F0071D552 /* MTContentLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTContentLoader.swift; path = Model/MTContentLoader.swift; sourceTree = "<group>"; };
+		1DADBE5E1ED06ED20071D552 /* MTAppointmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAppointmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,11 @@
 		1DADBE191ECC5F170071D552 /* MasaoTest */ = {
 			isa = PBXGroup;
 			children = (
+				1DADBE4C1ECC825C0071D552 /* Supporting files */,
+				1DADBE591ED06E0C0071D552 /* View */,
+				1DADBE4B1ECC7D970071D552 /* Controller */,
+				1DADBE4A1ECC7D8F0071D552 /* Model */,
 				1DADBE1A1ECC5F170071D552 /* AppDelegate.swift */,
-				1DADBE1C1ECC5F170071D552 /* ViewController.swift */,
-				1DADBE1E1ECC5F170071D552 /* Main.storyboard */,
-				1DADBE211ECC5F170071D552 /* Assets.xcassets */,
-				1DADBE231ECC5F170071D552 /* LaunchScreen.storyboard */,
-				1DADBE261ECC5F170071D552 /* Info.plist */,
 			);
 			path = MasaoTest;
 			sourceTree = "<group>";
@@ -124,6 +135,47 @@
 			);
 			path = MasaoTestUITests;
 			sourceTree = "<group>";
+		};
+		1DADBE4A1ECC7D8F0071D552 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DADBE511ECC868D0071D552 /* MTUser.swift */,
+				1DADBE531ECC8D970071D552 /* MTAppointment.swift */,
+				1DADBE551ECC8E0F0071D552 /* MTAppointmentType.swift */,
+				1DADBE571ECC934F0071D552 /* MTContentLoader.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1DADBE4B1ECC7D970071D552 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1DADBE1C1ECC5F170071D552 /* MTAppointmentsListViewController.swift */,
+				1DADBE481ECC7D880071D552 /* MTAppointmentsListDataProvider.swift */,
+			);
+			name = Controller;
+			path = MasaoTest/Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		1DADBE4C1ECC825C0071D552 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1DADBE1E1ECC5F170071D552 /* Main.storyboard */,
+				1DADBE211ECC5F170071D552 /* Assets.xcassets */,
+				1DADBE231ECC5F170071D552 /* LaunchScreen.storyboard */,
+				1DADBE261ECC5F170071D552 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		1DADBE591ED06E0C0071D552 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DADBE5E1ED06ED20071D552 /* MTAppointmentCell.swift */,
+			);
+			name = View;
+			path = MasaoTest/View;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -262,8 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DADBE1D1ECC5F170071D552 /* ViewController.swift in Sources */,
+				1DADBE491ECC7D880071D552 /* MTAppointmentsListDataProvider.swift in Sources */,
+				1DADBE1D1ECC5F170071D552 /* MTAppointmentsListViewController.swift in Sources */,
+				1DADBE5F1ED06ED20071D552 /* MTAppointmentCell.swift in Sources */,
+				1DADBE561ECC8E0F0071D552 /* MTAppointmentType.swift in Sources */,
+				1DADBE581ECC934F0071D552 /* MTContentLoader.swift in Sources */,
+				1DADBE541ECC8D970071D552 /* MTAppointment.swift in Sources */,
 				1DADBE1B1ECC5F170071D552 /* AppDelegate.swift in Sources */,
+				1DADBE521ECC868D0071D552 /* MTUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZQ4YCF33U4;
 				INFOPLIST_FILE = MasaoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iefymenko.MasaoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZQ4YCF33U4;
 				INFOPLIST_FILE = MasaoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iefymenko.MasaoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +576,7 @@
 				1DADBE411ECC5F170071D552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DADBE421ECC5F170071D552 /* Build configuration list for PBXNativeTarget "MasaoTestTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +585,7 @@
 				1DADBE441ECC5F170071D552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DADBE451ECC5F170071D552 /* Build configuration list for PBXNativeTarget "MasaoTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +594,7 @@
 				1DADBE471ECC5F170071D552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
