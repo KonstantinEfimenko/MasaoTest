@@ -8,7 +8,12 @@
 
 import UIKit
 
-class MTAppointmentListDataProvider: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
+class MTAppointmentListDataProvider: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+    
+    var textFilter:String?
+    var appointments: [MTAppointment]?
+    weak var collectionView: UICollectionView?
+    let contentLoader = MTContentLoader()
     
     var showOnlyConfirmed = false {
         didSet {
@@ -16,56 +21,55 @@ class MTAppointmentListDataProvider: NSObject, UICollectionViewDataSource, UICol
         }
     }
     
-    var textFilter:String?
-    
-    var appointments: [MTAppointment]?
-    
-    weak var collectionView: UICollectionView?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appointments?.count ?? 0;
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MTAppointmentCell
-        cell.appointment = appointments?[indexPath.row]
+        if let appointment = appointments?[indexPath.row]{
+            cell.configure(appointment: appointment)
+        }
         return cell;
     }
     
+    
     final func reloadData(){
-        MTContentLoader.sharedInstance.reloadData(onSuccess: {
+        contentLoader.reloadData(onSuccess: {
             self.useFilters()
         })
     }
     
+    
     final func useFilters(){
         
-        var result = MTContentLoader.sharedInstance.appointments
+        var result = contentLoader.appointments
         if showOnlyConfirmed {
-            result = result?.filter({(appointment) -> Bool in
+             result = result?.filter({(appointment) -> Bool in
                                     appointment.isConfirmed
                             })
         }
         
-        if let textFilter = textFilter{
+        if let textFilter = textFilter {
             if textFilter.characters.count > 0 {
-                result = result?.filter({(appointment) -> Bool in
-                                    if let fullName = appointment.relatedUser?.fullName().lowercased(){
-                                        return fullName.contains(textFilter)
-                                    }
-                                    return false
-                                })
+                 result = result?.filter{
+                    $0.relatedUser?.fullName().lowercased().contains(textFilter) ?? false
+                }
             }
         }
-        
         self.appointments = result
+    
         self.collectionView?.reloadData()
     }
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         textFilter = searchText.lowercased()
         useFilters()
     }
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()

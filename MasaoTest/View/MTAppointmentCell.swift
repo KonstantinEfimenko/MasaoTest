@@ -16,20 +16,14 @@ class MTAppointmentCell: UICollectionViewCell {
     @IBOutlet weak var timePeriodLabel: UILabel!
     @IBOutlet weak var relatedUserLabel: UILabel!
     
-    var appointment: MTAppointment? {
-        didSet{
-            self.fillValues()
-        }
+
+    func configure(appointment: MTAppointment) {
+        appointmentTypeLabel.text = appointment.type?.type
+        subjectLabel.text = appointment.subject
+        detailsLabel.text = appointment.details
+        timePeriodLabel.text = appointment.timePeriod()
+        relatedUserLabel.text = appointment.relatedUser?.fullName()
+        self.contentView.backgroundColor = appointment.isConfirmed ? UIColor.lightGray : UIColor.white
     }
     
-    final func fillValues(){
-        if let appointment = appointment {
-            appointmentTypeLabel.text = appointment.type?.type
-            subjectLabel.text = appointment.subject
-            detailsLabel.text = appointment.details
-            timePeriodLabel.text = appointment.timePeriod()
-            relatedUserLabel.text = appointment.relatedUser?.fullName()
-            self.contentView.backgroundColor = appointment.isConfirmed ? UIColor.lightGray : UIColor.white
-        }
-    }
 }

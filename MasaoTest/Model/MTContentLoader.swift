@@ -16,11 +16,9 @@ final class MTContentLoader {
     let serviceUrl = "http://178.32.4.84:7080/TestCRM/FANetworkService.svc"
     let dateFormatter = DateFormatter()
     
-    private init() {
+    init() {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
-    
-    static let sharedInstance = MTContentLoader()
     
     final func reloadData(onSuccess: @escaping ()->Void){
         
@@ -28,53 +26,22 @@ final class MTContentLoader {
     }
     
     final func fetchAppointmentTypes(onSuccess: @escaping ()->Void){
-        let parameters = [
-            "REQUEST" : [
-                "FUNCTION" : "GetDataFrom",
-                "OBJECT" : "AppointmentType",
-                "UDID" : "UDID1"
-            ],
-            "CONTENT" : [:]
-        ]
+        let requestWorker = MTAppointmentTypeRequestWorker()
         
-        fetchDataFromServer(parameters: parameters, success: {array in
+        fetchDataFromServer(parameters: requestWorker.parameters(), success: {array in
             if let array = array as? [[String:String]]{
-                var result = [String:MTAppointmentType]()
-                for dictionary in array {
-                    if let id = dictionary["Id"]{
-                        result[id] = MTAppointmentType(id:id,
-                                                       type:dictionary["Type"],
-                                                       description:dictionary["Description"])
-                    }
-                }
-            self.appointmentTypes = result
-            self.fetchUsers(onSuccess: onSuccess)
+                self.appointmentTypes = requestWorker.parseResponse(responseJson: array) as? [String : MTAppointmentType]
+                self.fetchUsers(onSuccess: onSuccess)
             }
         })
     }
     
     final func fetchUsers(onSuccess: @escaping ()->Void){
-        let parameters = [
-            "REQUEST" : [
-                "FUNCTION" : "GetDataFrom",
-                "OBJECT" : "User",
-                "UDID" : "UDID1"
-            ],
-            "CONTENT" : [:]
-        ]
+        let requestWorker = MTUserRequestWorker()
         
-        fetchDataFromServer(parameters: parameters, success: {array in
+        fetchDataFromServer(parameters: requestWorker.parameters(), success: {array in
             if let array = array as? [[String:String]]{
-                var result = [String:MTUser]()
-                for dictionary in array {
-                    if let id = dictionary["Id"]{
-                        result[id] = MTUser(id:id,
-                                            name:dictionary["Name"],
-                                            surname:dictionary["Surname"],
-                                            userPictureUrl:dictionary["UserPictureUrl"])
-                    }
-                }
-                self.users = result
+                self.users = requestWorker.parseResponse(responseJson: array) as? Dictionary<String, MTUser>
             self.fetchAppointments(onSuccess: onSuccess)
             }
         })

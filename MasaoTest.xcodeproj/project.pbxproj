@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D9E33AE1EEDD4B5004AA4C4 /* MTAppointmentTypeRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E33AD1EEDD4B5004AA4C4 /* MTAppointmentTypeRequestWorker.swift */; };
+		1D9E33B01EEDD51C004AA4C4 /* MTRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E33AF1EEDD51C004AA4C4 /* MTRequestWorker.swift */; };
+		1D9E33B21EEDDBB6004AA4C4 /* MTUserRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E33B11EEDDBB6004AA4C4 /* MTUserRequestWorker.swift */; };
 		1DADBE1B1ECC5F170071D552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE1A1ECC5F170071D552 /* AppDelegate.swift */; };
 		1DADBE1D1ECC5F170071D552 /* MTAppointmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADBE1C1ECC5F170071D552 /* MTAppointmentsListViewController.swift */; };
 		1DADBE201ECC5F170071D552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DADBE1E1ECC5F170071D552 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D9E33AD1EEDD4B5004AA4C4 /* MTAppointmentTypeRequestWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAppointmentTypeRequestWorker.swift; sourceTree = "<group>"; };
+		1D9E33AF1EEDD51C004AA4C4 /* MTRequestWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTRequestWorker.swift; path = Model/MTRequestWorker.swift; sourceTree = "<group>"; };
+		1D9E33B11EEDDBB6004AA4C4 /* MTUserRequestWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTUserRequestWorker.swift; path = Model/MTUserRequestWorker.swift; sourceTree = "<group>"; };
 		1DADBE171ECC5F170071D552 /* MasaoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasaoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DADBE1A1ECC5F170071D552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DADBE1C1ECC5F170071D552 /* MTAppointmentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTAppointmentsListViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +149,9 @@
 				1DADBE531ECC8D970071D552 /* MTAppointment.swift */,
 				1DADBE551ECC8E0F0071D552 /* MTAppointmentType.swift */,
 				1DADBE571ECC934F0071D552 /* MTContentLoader.swift */,
+				1D9E33AF1EEDD51C004AA4C4 /* MTRequestWorker.swift */,
+				1D9E33AD1EEDD4B5004AA4C4 /* MTAppointmentTypeRequestWorker.swift */,
+				1D9E33B11EEDDBB6004AA4C4 /* MTUserRequestWorker.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -314,7 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E33B01EEDD51C004AA4C4 /* MTRequestWorker.swift in Sources */,
+				1D9E33AE1EEDD4B5004AA4C4 /* MTAppointmentTypeRequestWorker.swift in Sources */,
 				1DADBE491ECC7D880071D552 /* MTAppointmentsListDataProvider.swift in Sources */,
+				1D9E33B21EEDDBB6004AA4C4 /* MTUserRequestWorker.swift in Sources */,
 				1DADBE1D1ECC5F170071D552 /* MTAppointmentsListViewController.swift in Sources */,
 				1DADBE5F1ED06ED20071D552 /* MTAppointmentCell.swift in Sources */,
 				1DADBE561ECC8E0F0071D552 /* MTAppointmentType.swift in Sources */,
